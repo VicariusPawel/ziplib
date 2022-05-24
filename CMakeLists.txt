@@ -1,3 +1,3 @@
 cmake_minimum_required (VERSION 3.0)
 
-add_subdirectory(Source/ZipLib)
+add_subdirectory(Source)
