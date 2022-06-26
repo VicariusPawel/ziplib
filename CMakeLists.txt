@@ -11,6 +11,10 @@ add_library(${PROJECT_NAME} STATIC
 	Source/ZipLib/detail/ZipGenericExtraField.cpp
 	Source/ZipLib/detail/ZipLocalFileHeader.cpp)
 
-target_link_libraries(${PROJECT_NAME} zlibstatic)
+if(ZLIB_USE_STATIC_LIBS)
+	target_link_libraries(${PROJECT_NAME} zlibstatic)
+else()
+	target_link_libraries(${PROJECT_NAME} zlib)
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/Source)
